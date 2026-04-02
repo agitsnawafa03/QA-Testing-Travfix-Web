@@ -1,0 +1,13 @@
+BASE_URL = "http://154.19.37.243:3006/"
+
+# VALID LOGIN
+USERNAME_VALID = "Andi"
+PASSWORD_VALID = "Sempak13"
+
+# INVALID LOGIN
+USERNAME_INVALID = "Nana"
+PASSWORD_INVALID = "1234567"
+
+# VALIDATION (PENTING 🔥)
+DASHBOARD_INDICATOR = "logout"   # atau teks yang muncul setelah login
+ERROR_INDICATOR = "error"
