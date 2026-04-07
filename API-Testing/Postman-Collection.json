@@ -1,0 +1,133 @@
+{
+  "info": {
+    "_postman_id": "a0ccc378-56a8-4e42-960c-6bdd7fb81a1a",
+    "name": "QA API Testing - Travfix",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53746227",
+    "_collection_link": "https://go.postman.co/collection/53746227-a0ccc378-56a8-4e42-960c-6bdd7fb81a1a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "TC-LOGIN-001 - Login Success",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDcsInVzZXJuYW1lIjoiQW5kaSIsIm5hbWUiOiJBbmRpIFdpYm93byIsImVtYWlsIjoiYW5kaXNlYmFzdGlhbjEzQGdtYWlsLmNvbSIsInBob25lIjoiMDg1ODE3ODE3OTgxIiwiYXZhdGFyX3VybCI6Imh0dHA6Ly8xNTQuMTkuMzcuMjQzOjUwMDUvc3RvcmFnZS9jdXN0b21lci9hdmF0YXIvNDdfMTc3NTEwMTAwMjkwMi5qcGciLCJleHAiOjE3NzUzNjE2ODAsImlhdCI6MTc3NTI3NTI4MH0.fo4KraiE80Id3mWPOVCk1kIJyHO8pRGMaCU4bTv648o\n",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"Andi\",\r\n  \"password\": \"Sempak13\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://154.19.37.243:5005/apps/auth/login",
+          "protocol": "http",
+          "host": [
+            "154",
+            "19",
+            "37",
+            "243"
+          ],
+          "port": "5005",
+          "path": [
+            "apps",
+            "auth",
+            "login"
+          ]
+        },
+        "description": "Test login with valid credentials  \nExpected: 200 OK + token"
+      },
+      "response": []
+    },
+    {
+      "name": "TC-LOG-002- Login Failed",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"Nana\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://154.19.37.243:5005/apps/auth/login",
+          "protocol": "http",
+          "host": [
+            "154",
+            "19",
+            "37",
+            "243"
+          ],
+          "port": "5005",
+          "path": [
+            "apps",
+            "auth",
+            "login"
+          ]
+        },
+        "description": "Test login with invalid credentials (wrong password)\n\nExpected:\n\n- Status code: 401 Unauthorized\n    \n- Response contains error message\n    \n- No access_token returned"
+      },
+      "response": []
+    },
+    {
+      "name": "TC-LOC-001 - Get Locations",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://154.19.37.243:5005/apps/maps?",
+          "protocol": "http",
+          "host": [
+            "154",
+            "19",
+            "37",
+            "243"
+          ],
+          "port": "5005",
+          "path": [
+            "apps",
+            "maps"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "type": "text"
+            }
+          ]
+        },
+        "description": "Test login with locations  \nExpected: 200 OK + token"
+      },
+      "response": []
+    }
+  ]
+}
